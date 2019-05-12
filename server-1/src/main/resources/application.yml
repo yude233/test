@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: server-1 #指定本服务的名称，
+          # 以便Spring Cloud Config客户端知道正在查找哪个服务
+server:  port: 8082
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务的IP，而不是服务器名称
+  client:
+    register-with-eureka: true #向Eureka注册服务
+    fetch-registry: true #拉取注册表本地副本
+    service-url:
+      default-znoe: http://localhost:8761/eureka

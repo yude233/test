@@ -1,0 +1,22 @@
+server:
+  port: 8888
+spring:
+  application:    name: config_server
+  profiles:
+    active:
+    - native  #用于存储配置的后端存储库（文件系统）
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - classpath:/config/server_1 #classpath:  （打包后）路径定位到classes下面
+          - classpath:/config/server_2 #classpath:  （打包后）路径定位到classes下面
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务的IP，而不是服务器名称
+  client:
+    register-with-eureka: true #向Eureka注册服务
+    fetch-registry: true #拉取注册表本地副本
+    service-url:
+      default-znoe: http://localhost:8761/eureka
