@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author qaz
- *
- */
-module test {
-}
